@@ -1,0 +1,45 @@
+<h3>登録された一覧</h3>
+
+<body>
+	<h3>登録されたアドレス一覧</h3>
+
+	<div th:if="${list!=null and !list.empty}">
+		<table class="table table-striped">
+			<thead>
+				
+				<th>学籍番号</th>
+				<th>名前</th>
+				<th>年齢</th>
+				<th>メアド</th>
+				<th>電話番号</th>
+
+				<th role="action"></th>
+			</thead>
+			<tbody>
+				<tr class="align-middle" th:each="item, stat : ${list}" th:object="${item}">
+					<td th:text="*{studentnumber}"></td>
+					<td th:text="*{name}"></td>
+					<td th:text="*{age}"></td>
+					<td th:text="*{mail}"></td>
+					<td th:text="*{phone}"></td>
+				</tr>
+
+				</tr>
+				
+				</tr>
+				
+				
+				<a href="/">トップページに戻る</a>
+	
+
+			</tbody>
+			
+		</table>
+	</div>
+	<div th:unless="${list!=null and !list.empty}">
+		<div class="alert alert-danger" role="alert">
+			データなし
+		</div>
+	</div>
+</body>
+    </div>

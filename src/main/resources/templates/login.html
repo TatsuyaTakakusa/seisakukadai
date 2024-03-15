@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login_page</title>
+</head>
+<body>
+    <div class="container">
+        <!-- login form -->
+        <div class="row">
+            <div
+                class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-10 col-xs-12">
+                <div class="well">
+                    <form method="post" th:action="@{/login/}" th:object="${gakuseihyou}">
+                        <fieldset>
+                            <legend> ログイン </legend>
+                            <h3>学生番号:0000000</h3><h3>パスワード:0000</h3><h2>↑これで仮登録できるよ↑</h2><h3>一度学生情報を入力したらその情報を入力してね</h3>
+                            <div class="form-group">
+                                <label for="inputStudentnumber">学生番号:</label> <input type="text"
+                                    id="studentnumber" class="form-control" placeholder="学籍番号"
+                                    name="studentnumber" th:field="*{studentnumber}">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword">パスワード:</label> <input type="password"
+                                    id="password" class="form-control" placeholder="Password"
+                                    name="password" th:field="*{password}">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">ログイン</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
